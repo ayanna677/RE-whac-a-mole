@@ -115,3 +115,31 @@ function selectTile() {
     }
 }
 
+document.getElementById("restart-btn").addEventListener("click", () => {
+    score = 0;
+    gameOver = false;
+    timeLeft = 30;
+    document.getElementById("score").innerText = score;
+    document.getElementById("timer").innerText = timeLeft;
+    document.getElementById("restart-btn").style.display = "none";
+
+    if (currMoleTile) currMoleTile.innerHTML = "";
+    if (currPlantTile) currPlantTile.innerHTML = "";
+    
+    // Restart timer
+    timerInterval = setInterval(() => {
+        if (gameOver) {
+            clearInterval(timerInterval);
+            return;
+        }
+        timeLeft--;
+        document.getElementById("timer").innerText = timeLeft;
+        if (timeLeft <= 0) {
+            document.getElementById("score").innerText = "GAME OVER: " + score;
+            gameOver = true;
+            document.getElementById("restart-btn").style.display = "block";
+            clearInterval(timerInterval);
+        }
+    }, 1000);
+});
+
