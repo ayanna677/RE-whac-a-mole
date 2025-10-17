@@ -1,80 +1,36 @@
-/* Body and background */
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    background: url("./mario-bg.jpg");
-    background-size: cover;
-}
-
-/* Game container (board + restart button) */
-#game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
-
-/* Game board as 3x3 grid */
 #board {
     width: 540px;
     height: 540px;
     display: grid;
-    grid-template-columns: repeat(3, 180px);
-    grid-template-rows: repeat(3, 180px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 0;
 
     background: url("./soil.png");
     background-size: cover;
     border: 3px solid white;
     border-radius: 25px;
-    margin-bottom: 20px; /* space for button */
+    margin-bottom: 20px;
 }
 
-/* Individual tiles */
 #board div {
-    width: 180px;
-    height: 180px;
-
+    width: 100%;
+    height: 100%;
     background-image: url("./pipe.png");
     background-size: cover;
     background-position: center;
-
-    /* center mole/plant images */
     display: flex;
     justify-content: center;
     align-items: center;
-
-    position: relative; /* important for absolute positioning */
+    position: relative;
 }
 
-/* Mole and plant images */
 #board div img {
     width: 100px;
     height: 100px;
-
-    position: absolute; /* ensures it’s perfectly centered inside tile */
+    position: absolute; /* ensures images do not affect layout */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-}
-
-/* Restart button */
-#restart-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ff4444;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#restart-btn:hover {
-    background-color: #ff0000;
+    pointer-events: none; /* prevent blocking clicks on parent tile */
 }
