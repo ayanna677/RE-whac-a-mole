@@ -17,6 +17,22 @@ document.addEventListener('click', () => {
 
 window.onload = function() {
     setGame();
+
+    // ⏱ Start timer
+    let timerInterval = setInterval(() => {
+        if (gameOver) {
+            clearInterval(timerInterval);
+            return;
+        }
+        timeLeft--;
+        document.getElementById("timer").innerText = timeLeft;
+        if (timeLeft <= 0) {
+            document.getElementById("score").innerText = "GAME OVER: " + score;
+            gameOver = true;
+            document.getElementById("restart-btn").style.display = "block";
+            clearInterval(timerInterval);
+        }
+    }, 1000);
 }
 
 function setGame() {
@@ -98,3 +114,4 @@ function selectTile() {
         missSound.play();
     }
 }
+
