@@ -2,6 +2,7 @@ let currMoleTile;
 let currPlantTile;
 let score = 0;
 let gameOver = false;
+let timeLeft = 30; // ⏱ timer
 
 // 🎵 Load sounds (Add these at the top)
 const hitSound = new Audio('hit.mp3');      // sound when hitting a mole
@@ -142,4 +143,5 @@ document.getElementById("restart-btn").addEventListener("click", () => {
         }
     }, 1000);
 });
+
 
