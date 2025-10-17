@@ -14,31 +14,31 @@ body {
     margin-top: 20px;
 }
 
-/* Game board */
+/* Game board as 3x3 grid */
 #board {
     width: 540px;
     height: 540px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0;
 
     background: url("./soil.png");
     background-size: cover;
     border: 3px solid white;
     border-radius: 25px;
+    margin-bottom: 20px; /* space for button */
 }
 
 /* Individual tiles */
 #board div {
-    width: 180px; 
-    height: 180px;
     background-image: url("./pipe.png");
     background-size: cover;
 
-    /* Center images inside tile */
+    /* center mole/plant images */
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     position: relative;
 }
 
@@ -57,7 +57,6 @@ body {
 
 /* Restart button */
 #restart-btn {
-    margin-top: 20px; /* space between board and button */
     padding: 10px 20px;
     font-size: 16px;
     background-color: #ff4444;
@@ -70,3 +69,5 @@ body {
 #restart-btn:hover {
     background-color: #ff0000;
 }
+
+
