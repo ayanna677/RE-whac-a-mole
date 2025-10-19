@@ -51,14 +51,17 @@ h1, h2 {
     overflow: hidden; /* keeps character inside pipe */
 }
 
-/* ✅ FIXED character alignment */
+#board div {
+    position: relative;
+}
+
 #board div img {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     position: absolute;
-    bottom: 0; /* stays inside the pipe */
+    bottom: 70px; /* move mole upward to sit above the pipe */
     left: 50%;
-    transform: translateX(-50%) translateY(10px);
+    transform: translateX(-50%);
     pointer-events: none;
     user-select: none;
 }
@@ -84,3 +87,4 @@ h1, h2 {
 #restart-btn:hover {
     background-color: #ff0000;
 }
+
