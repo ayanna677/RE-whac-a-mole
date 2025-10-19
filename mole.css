@@ -3,86 +3,43 @@ body {
     text-align: center;
     background: url("./mario-bg.jpg");
     background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-h1, h2 {
-    margin: 10px;
-    color: white;
-    text-shadow: 2px 2px 4px #000;
-}
-
-#game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 15px;
 }
 
 #board {
     width: 540px;
     height: 540px;
+    /* background-color: green; */
+
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-end; /* ensures characters appear at bottom of tiles */
+
     background: url("./soil.png");
     background-size: cover;
     border: 3px solid white;
     border-radius: 25px;
-    margin-bottom: 120px; /* space for restart button */
-    position: relative;
 }
 
 #board div {
-    width: 180px;
+    /* board = 540 x 540, divide into 3x3 tiles --> 180 x 180 per div */
+    width: 180px; 
     height: 180px;
     background-image: url("./pipe.png");
     background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: visible; /* allow mole/plant to appear above pipe */
 }
 
 #board div img {
+    /* all img tags inside tiles */
     width: 100px;
     height: 100px;
-    position: absolute;
-    bottom: 0; /* sits on top of pipe */
-    left: 50%;
-    transform: translateX(-50%);
-    pointer-events: none;
+
     user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
-/* Restart button fixed at bottom */
-#restart-btn {
-    position: fixed;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 12px 25px;
-    font-size: 18px;
-    background-color: #ff4444;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    display: none;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    transition: background-color 0.2s ease;
-}
-
-#restart-btn:hover {
-    background-color: #ff0000;
-}
 
 
 
