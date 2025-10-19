@@ -40,6 +40,26 @@ body {
     -ms-user-select: none;
 }
 
+/* Restart button fixed at bottom */
+#restart-btn {
+    position: fixed;       /* stays at the bottom of the screen */
+    bottom: 20px;          /* distance from bottom */
+    left: 50%;             /* center horizontally */
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;         /* only show when game ends */
+}
+
+#restart-btn:hover {
+    background-color: #ff0000;
+}
+
 
 
 
