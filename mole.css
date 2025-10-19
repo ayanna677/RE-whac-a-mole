@@ -53,14 +53,14 @@ h1, h2 {
 
 #board div {
     position: relative;
-    overflow: visible; /* so the image can appear above the tile */
+    overflow: visible; /* allows the image to stick out above the pipe */
 }
 
 #board div img {
     width: 100px;
     height: 100px;
     position: absolute;
-    bottom: 30px; /* fine-tuned so character sits on the pipe opening */
+    bottom: 10px; /* slightly above the pipe top */
     left: 50%;
     transform: translateX(-50%);
     pointer-events: none;
@@ -88,6 +88,7 @@ h1, h2 {
 #restart-btn:hover {
     background-color: #ff0000;
 }
+
 
 
 
