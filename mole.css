@@ -32,13 +32,13 @@ h1, h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-
+    align-items: flex-end; /* ensures characters appear at bottom of tiles */
     background: url("./soil.png");
     background-size: cover;
     border: 3px solid white;
     border-radius: 25px;
-    margin-bottom: 120px; /* adds room for restart button */
+    margin-bottom: 120px; /* space for restart button */
+    position: relative;
 }
 
 #board div {
@@ -48,26 +48,21 @@ h1, h2 {
     background-size: cover;
     background-position: center;
     position: relative;
-    overflow: hidden; /* keeps character inside pipe */
-}
-
-#board div {
-    position: relative;
-    overflow: visible; /* allows the image to stick out above the pipe */
+    overflow: visible; /* allow mole/plant to appear above pipe */
 }
 
 #board div img {
     width: 100px;
     height: 100px;
     position: absolute;
-    bottom: 10px; /* slightly above the pipe top */
+    bottom: 0; /* sits on top of pipe */
     left: 50%;
     transform: translateX(-50%);
     pointer-events: none;
     user-select: none;
 }
 
-/* ✅ Restart button styling */
+/* Restart button fixed at bottom */
 #restart-btn {
     position: fixed;
     bottom: 25px;
@@ -88,6 +83,8 @@ h1, h2 {
 #restart-btn:hover {
     background-color: #ff0000;
 }
+
+
 
 
 
