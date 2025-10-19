@@ -3,6 +3,7 @@ body {
     text-align: center;
     background: url("./mario-bg.jpg");
     background-size: cover;
+    background-position: center;
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -10,28 +11,32 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+}
+
+h1, h2 {
+    margin: 10px;
 }
 
 #game-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
-/* Board */
 #board {
     width: 540px;
     height: 540px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
     background: url("./soil.png");
     background-size: cover;
     border: 3px solid white;
     border-radius: 25px;
-    margin-bottom: 30px; /* adds space above the restart button */
+    margin-bottom: 100px; /* space for fixed button */
 }
 
 #board div {
@@ -39,10 +44,30 @@ body {
     height: 180px;
     background-image: url("./pipe.png");
     background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
-/* Restart button */
+#board div img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 35px; /* adjust popup position */
+    left: 50%;
+    transform: translateX(-50%);
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/* ✅ Fixed restart button */
 #restart-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 12px 25px;
     font-size: 18px;
     background-color: #ff4444;
@@ -50,7 +75,9 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    display: none; /* hidden until game ends */
+    display: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: background-color 0.2s ease;
 }
 
 #restart-btn:hover {
