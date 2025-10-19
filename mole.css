@@ -53,13 +53,14 @@ h1, h2 {
 
 #board div {
     position: relative;
+    overflow: visible; /* so the image can appear above the tile */
 }
 
 #board div img {
     width: 100px;
     height: 100px;
     position: absolute;
-    bottom: 70px; /* move mole upward to sit above the pipe */
+    bottom: 30px; /* fine-tuned so character sits on the pipe opening */
     left: 50%;
     transform: translateX(-50%);
     pointer-events: none;
@@ -87,4 +88,5 @@ h1, h2 {
 #restart-btn:hover {
     background-color: #ff0000;
 }
+
 
